@@ -2,5 +2,5 @@
 .env
 flagged/
 *.wav
-__pycache__/
 *.pyc
+__pycache__/*
