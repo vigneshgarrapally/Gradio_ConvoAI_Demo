@@ -1,2 +1,6 @@
 .vscode/
 .env
+flagged/
+*.wav
+*.pyc
+__pycache__/*

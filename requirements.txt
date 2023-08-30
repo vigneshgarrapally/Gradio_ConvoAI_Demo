@@ -1,1 +1,6 @@
 gradio
+deepgram-sdk
+python-dotenv
+elevenlabs
+openai
+langchain
