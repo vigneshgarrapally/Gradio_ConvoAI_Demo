@@ -20,7 +20,7 @@ Dependencies:
     - utils (custom module)
 
 Author:
-    Vignesh Garrapally (vigneshgarrapally@gmail.com)
+    Vignesh Garrapally
 """
 
 import os

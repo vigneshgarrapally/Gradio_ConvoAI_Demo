@@ -13,7 +13,7 @@ Dependencies:
     - deepgram
 
 Author:
-    Vignesh Garrapally (garrapallyvignesh8055@gmail.com)
+    Vignesh Garrapally
 """
 import os
 from typing import Optional
@@ -34,6 +34,7 @@ class Chat:
     Methods:
     prompt(content: str) -> str: Adds the user's message to the conversation, sends it to the AI assistant, and returns the assistant's response.
     """
+
     def __init__(self, system: Optional[str] = None):
         self.system = system
         self.messages = []
@@ -79,7 +80,6 @@ def text_to_speech(text):
     return audio
 
 
-
 async def deepgram_transcribe(audio_filepath):
     """
     Transcribe audio using Deepgram API
@@ -100,7 +100,9 @@ async def deepgram_transcribe(audio_filepath):
         source = {"buffer": audio, "mimetype": "wav"}
         response = await dg_client.transcription.prerecorded(source, options)
     try:
-        transcription = response["results"]["channels"][0]["alternatives"][0]["transcript"]
+        transcription = response["results"]["channels"][0]["alternatives"][0][
+            "transcript"
+        ]
     except KeyError:
         raise Exception("Error with Deepgram API request")
     return transcription
